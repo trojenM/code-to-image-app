@@ -21,8 +21,8 @@ export default function Home() {
 
     if (editorElement) {
 
-      const handles = document.querySelectorAll('.handle');
-      handles.forEach(handle => handle.style.display = 'none');
+      const handles = document.querySelectorAll('.handle') as any;
+      handles.forEach((handle: any) => { handle.style.display = 'none' });
 
       const canvas = html2canvas(editorElement);
       const img = (await canvas).toDataURL('image/png').replace('image/png', 'image/octet-stream');
@@ -32,7 +32,7 @@ export default function Home() {
       link.href = img;
       link.click();
 
-      handles.forEach(handle => handle.style.display = 'block');
+      handles.forEach((handle: any) => { handle.style.display = 'block' });
     }
   }
 
